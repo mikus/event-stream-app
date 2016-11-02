@@ -1,0 +1,9 @@
+eventstream:
+  processTime: 10                   # how long application should run in seconds
+  eventInterval: 1                  # how often new events come in miliseconds
+  maxEventDelay: 1000               # maximum time the event can be delayed before come in microseconds
+  minClientId: 1000                 # minimum id of the client in generated events
+  maxClientId: 1100                 # maximum id of the client in generated events
+  eventDuplicationProbability: 0.05 # probablity for event duplication
+  minDuplicateEventDelay: 10        # minimal delay dor duplicated event in miliseconds
+  maxDuplicateEventDelay: 5000      # maximal delay dor duplicated event in miliseconds

@@ -1,0 +1,39 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.1.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+jar {
+	baseName = 'event-stream-app'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+    compile files('lib/event-stream-core-1.0.0.jar')
+	compile 'org.codehaus.groovy:groovy'
+	compile 'org.springframework.boot:spring-boot-starter'
+	compile 'io.dropwizard.metrics:metrics-core:3.1.0'
+	compile 'io.reactivex:rxjava:1.2.1'
+	compile 'org.projectlombok:lombok'
+	compile 'org.apache.commons:commons-lang3:3.4'
+	compile 'com.google.guava:guava:19.0'
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
